@@ -1,3 +1,39 @@
 \section{Opgave 6}
 Det lineære system analyseres med henblik på at designe en regulator.
+
+De fire overføringsfunktioner i matricen
+\begin{equation*}
+\matrix{c}{}{}{ h'_1 \\ h'_2 } =
+\matrix{c c}{}{}{
+\frac{ a_2 \Delta_{h_2} k_2 }
+	{ A_1A_2s^2
+	+ ( A_1 A_2 \Delta_{h_2} + A_2 A_1 \Delta_{h_2} ) s
+	+ A_1 A_2 \Delta_{h_1} \Delta_{h_2} } &
+\frac{k_1}{ A_1 s + a_1 \Delta_{h_1} } \\
+\frac{k_2}{ A_2 s + a_2 \Delta_{h_2} } &
+0
+}
+\matrix{c}{}{}{ u \\ d }
+\end{equation*}
+navngives:
+\begin{equation*}
+\matrix{c}{}{}{ h'_1 \\ h'_2 } =
+\matrix{c c}{}{}{
+h1u & h1d \\ h2u & h2d
+}
+\matrix{c}{}{}{ u \\ d }
+\end{equation*}
+
 \paragraph{Poler og nulpunkter}
+	$h1d$ har en reel pol i $-\frac{a_1\Delta_{h_1}}{A_1}$, $h2u$ har en reel pol i
+	$-\frac{a_2\Delta_{h_2}}{A_2}$, $h1u$ har to reele poler i
+	$-\frac{a_1\Delta_{h_1}}{A_1}$ og $-\frac{a_2\Delta_{h_2}}{A_2}$. $h2d$ har
+	hverken poler eller nulpunker. Der er ingen nulpunkter i nogle af
+	overføringsfunktionerne.
+	
+	Med de opgivne konstanter er $-\frac{a_1\Delta_{h_1}}{A_1} =
+	-\frac{a_2\Delta_{h_2}}{A_2}$, så $h1u$ får en reel dobbelt pol.
+\paragraph{Type og orden}
+\paragraph{Sløjfeforstærkning}
+\paragraph{Stabilitet}
+\paragraph{Bodeplot}
