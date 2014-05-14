@@ -1,0 +1,29 @@
+\section{Introduktion}
+Et system består af to forbundne vandtanke \emph{Tank 2} og \emph{Tank 1}. Tank
+2 er placeret over tank 1 med et hul i bunden, så vand løber fra tank 2 over i
+tank 1. Vandtilførslen til tank 2 kan styres med en elektrisk ventil.
+Vandstanden i tank 1 kan måles.
+Det er muligt for vand at dryppe udefra og ned i tank 1, dette betragtes som en
+forstyrrelse.
+
+En regulator ønskes der kan holde vandstanden i tank 1 konstant.
+
+\paragraph*{Mål}
+målet er en regulator der bringer højden i tank 1 væk fra sætpunktet
+med $2~mm$ i max $20~sek$ ved en forstyrrelse på $2~cm^3/s$
+
+\paragraph*{Systemet}
+er defineret ved:
+\begin{align*}
+A1 \diff{h_1} &= -a_1\sqrt{2gh_1} + a_2\sqrt{2gh_2} + k_1d\\
+A2 \diff{h_2} &= -a_2\sqrt{2gh_2} + k_2u\\
+y &= k_mh_1\\
+h_1 &> 0,~h_2 > 0,~u>0
+\end{align*}
+hvor $u$ er inputtet, $d$ er forstyrrelsen og $y$ er målesignalet
+
+\begin{align*}
+A_1 &= 28~cm^2 & a_1 &= 0.071~cm^2 & k_1 &= 3.14~cm^3/V sek\\
+A_2 &= 28~cm^2 & a_2 &= 0.071~cm^2 & k_2 &= 3.29~cm^3/V sek\\
+k_m &= 0.50~V/cm & g &= 981~cm/sek^2
+\end{align*}
