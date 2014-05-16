@@ -34,6 +34,31 @@ h1u & h1d \\ h2u & h2d
 	Med de opgivne konstanter er $-\frac{a_1\Delta_{h_1}}{A_1} =
 	-\frac{a_2\Delta_{h_2}}{A_2}$, så $h1u$ får en reel dobbelt pol.
 \paragraph{Type og orden}
+	Da ingen af overføringsfunktionerne indeholder en ren integrator er de alle
+	type 0 systemer. $h1d$ og $h2u$ er af 1. orden. $h1u$ er af 2. orden. $h2d$ er
+	et konstant gain på 0.
 \paragraph{Sløjfeforstærkning}
+	\subparagraph{$h1u$:}
+		$\frac{a_2\Delta_{h_2}k_2}{A_1A_2\Delta_{h_1}\Delta_{h_2}} \approx 7.4268$
+	\subparagraph{$h1d$:}
+		$\frac{k_1}{A_1s + a_1\Delta_{h_1}} \approx 7.0882$
+	\subparagraph{$h2u$:}
+		$\frac{k_2}{A_2s + a_2\Delta_{h_2}} \approx 7.4268$
+	\subparagraph{$h2d$:}
+		$0$\\
+	Det er her værd at bemærke at sløjfeforstærkningen for $h1u$ og $h2u$ er den
+	samme, hvilket betyder at vandstanden i tank 1 og 2 for $d=0$ vil være lig
+	hinanden. (Dette er ikke overraskende da også $h_{20} = h_{10}$)
 \paragraph{Stabilitet}
+	Da alle overføringsfunktioner kun har rødder med negativ realdel (eller er $0$)
+	er systemet stabilt.
 \paragraph{Bodeplot}
+	Bodeplot af de 4 overføringsfunktioner findes i fig \ref{fig:opg6_plot}. Kigger
+	man på bodeplottet for $h1u$ ser systemet ud til at være meget nemt at designe
+	en controller til - med et $\alpha = 0.1$ kan en fasemargen på $\approx 55^o$
+	opnås, uanset $K_p$ i en \emph{P-lead} eller \emph{PI-lead} controller - men
+	tages systemets ulinearitet (specielt inputbegrænsning) med i regnestykket,
+	går det ikke så nemt.
+	
+\stdfig{1}{opg6_plot}{Bodeplot af $h1u$, $h1d$, $h2u$, $h2d$ }{fig:opg6_plot}
+	
