@@ -1,0 +1,30 @@
+\section{Opgave 7}
+En regulator designes ud fra metoden angivet i \emph{lecture\_9\_PID\_2}. Da
+størrelsen af styresignalet som nævt ønskes så lille som muligt benyttes en
+\emph{PI-lead} controller med lead ledet i tilbagekoblingssløjfen.
+
+Alle udregninger sker i et automeret \emph{Matlab} script, vedhæftet i appendix
+\ref{app:reg1}
+
+\paragraph{Valg af fasemargener:}
+	En passende stor fasemargen vælges, så systemets styresignal $u$ ikke bliver
+	for stort. En margen på $\gamma_m = 50^o$ vælges.
+	Der reserveres $11^o$ til \emph{I}-ledet.
+	$\alpha$ sættes til $0.1$, hvilket giver $54.9^o$ ekstra.
+	
+	Dette giver at der søges efter en fase på $180^o - 50^o - 11^o + 54.9^o =
+	-173.9^o$ vha. \emph{Matlab} script.
+\paragraph{Valg af $\omega_c$:}
+	$\omega_c$ bestemmes så: $\phase{h1u(\omega_c)} = -173.9^o$. Dette giver
+	$\omega_c =  0.2972~rad/sek$
+\paragraph{Valg af $\tau_i$ og $\tau_d$:}
+	$\tau_i$ vælges ved at søge efter et $\tau_i$, der nettop giver et fasebidrag
+	på $-11^o$ ved $\omega_c$. Dette gøres igen vha. \emph{Matlab}. $\tau_i =
+	17.2982$.
+	
+	$\tau_d$ vælges så fasebidraget på $54.9^o$ placeres nettop ved $\omega_c$.
+	$\tau_d = \frac{1}{\omega_c \sqrt{\alpha}} = 10.6414$.
+\paragraph{Valg af $K_p$:}
+	$K_p$ vælges nu så forstærkningen ved $\omega_c$ bliver 0.
+	Dette giver $K_p = 29.5747$
+	
