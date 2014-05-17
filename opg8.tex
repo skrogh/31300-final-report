@@ -1,0 +1,42 @@
+\section{Opgave 8}
+Både det lineære og ulineære system tested med \emph{PI-lead} controlleren.
+Der udføres test både med \emph{lead}-ledet i frem- og tilbagekoblingssløjfen.
+
+Som input i testen benyttes:
+\begin{gather*}
+d(t) = \left\{\begin{array}{r c l}
+1 & \mbox{for} & 200<t<300\\
+0 & \mbox{ellers} & 
+\end{array}\right.\\
+h_{1, set}(t) = \left\{\begin{array}{r c l}
+ 1 & \mbox{for} & 400<t<500\\
+-1 & \mbox{for} & 600<t<700\\
+ 0 & \mbox{ellers} & 
+\end{array}\right.\\
+\end{gather*}
+Hvor $h_{1, set}$ er referencen for $h1$
+
+Det ses af \ref{fig:lin_sys_12_6} at settling tide for systemet ikke afhænger
+væsentligt af hvor \emph{lead} ledet er, men stigetiden gør.
+
+For det ulineære system gælder imidlertid at de store udsving på $u$ med
+\emph{lead}-ledet i tilbagekoblingsløkken giver stort oversving og lang
+indsvingningstid.
+
+Forskellen på det lineære og ulineære system omkring arbejdspunktet består
+hodsageligvis i inputbegrænsningen, dette ses af \ref{fig:lin_ulin_12_6}
+
+\paragraph{Resultat}
+	Målet var at systemet med en step påvirkning på $2~cm^3/sek$ ikke oversteg
+	$h_{10}$ med mere end $2~mm$ i mere end $2~sek$. Vores regulator overstiger med nævnte
+	påvirkning $h_{10}$ med mere end $2~mm$ i under $15~sek$ og opfylder derved
+	kravet. Zoom af \ref{fig:ulin_sys_12_6} omkring påvirkningen fines i
+	\ref{fig:dist_zoom}
+
+
+
+\stdfig{1}{lin_sys_12_6}{Simulering af det linære system med en \emph{PI-lead}
+controller}{fig:lin_sys_12_6}
+
+\stdfig{1}{ulin_sys_12_6}{Simulering af det ulinære system med en \emph{PI-lead}
+controller}{fig:ulin_sys_12_6}
