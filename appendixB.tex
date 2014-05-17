@@ -1,1 +1,39 @@
 \section*{Appendix B - Sliding mode controller}
+*blabla tekst her*
+*resten er noter*
+
+Universal Single-Input–Single-Output (SISO)
+Sliding-Mode Controllers With Finite-Time
+Convergence
+Arie Levant
+
+Yuri Shtessel
+Christopher Edwards
+Leonid Fridman
+Arie Levant
+Sliding Mode Control
+and Observation
+
+\newcommand{\sign}{\mbox{sign}}
+
+Begrænsning på relæ tænd/sluk frekvens på $10~Hz$
+
+$ \sigma = y $
+$ \diff\sigma = y \frac{s}{0.1s + 1}$
+$ a = -\sign( \diff\sigma ) + 15 ~ \sign(\sigma)\sqrt{\abs{\sigma}} $
+$ u = 4 u_0 + 4 u_0 a $
+
+\stdfig{1}{sliding_12_6}{Simulering af det ulineære system med en
+sliding mode controller simuleret omkring arbejdspunktet
+$h_{10} = 12.6~cm$}{fig:sliding_12_6}
+\stdfig{1}{sliding_100}{Simulering af det ulineære system med en
+sliding mode controller simuleret omkring arbejdspunktet
+$h_{10} = 100~cm$}{fig:sliding_100}
+
+\stdfig{1}{sliding_sur_12_6}{Sliding flade for sliding mode
+controlleren simuleret omkring arbejdspunktet $h_{10} =
+12.6~cm$}{fig:slidin_sur_12_6}
+
+\stdfig{1}{sliding_sur_100}{Sliding flade for sliding mode
+controlleren simuleret omkring arbejdspunktet $h_{10} =
+100~cm$}{fig:slidin_sur_100}
