@@ -1,27 +1,58 @@
 \section*{Appendix B - Sliding mode controller}
-*blabla tekst her*
-*resten er noter*
-
-Universal Single-Input–Single-Output (SISO)
-Sliding-Mode Controllers With Finite-Time
-Convergence
-Arie Levant
-
-Yuri Shtessel
-Christopher Edwards
-Leonid Fridman
-Arie Levant
-Sliding Mode Control
-and Observation
-
 \newcommand{\sign}{\mbox{sign}}
+Som nævnt dessignes også en sliding mode controller.
+Dette gøres da en af efenskaberne ved en sliding mode controller er god respons
+på forstyrrelser - det bevirker ydermere at de performer godt for ulineære
+systemer.
 
-Begrænsning på relæ tænd/sluk frekvens på $10~Hz$
+En output baseret sliding mode controller benyttes med
+\begin{equation*}
+\sigma = y - ref
+\end{equation*}
+hvor $ref$ er stresignalet og $y$ er outputtet fra systemet af tanke ($y = h_1
+k_m$)
 
-$ \sigma = y $
-$ \diff\sigma = y \frac{s}{0.1s + 1}$
-$ a = -\sign( \diff\sigma ) + 15 ~ \sign(\sigma)\sqrt{\abs{\sigma}} $
-$ u = 4 u_0 + 4 u_0 a $
+Et \emph{lead}-led benyttes som tilnærmelse til differentiering, således at:
+\begin{equation*}
+\diff\sigma = y \frac{s}{0.1s + 1}
+\end{equation*}
+
+Controlleren vælges så:
+\begin{equation*}
+u = K - K ~\sign( \diff\sigma ) + a ~ \sign(\sigma)\sqrt{\abs{\sigma}}
+\end{equation*}
+
+Hvor $K$ bestemmer amplituden for relæfunktionen, og dermed det mulige
+arbejdsomrade, samt mulighed for at modvirke påvirkninger.
+
+$a$ er med til at bestemme området hvor sliding mode kan opnåes.
+
+$K$ og $a$ vælges til $K = 4~u_0$ $a=15$
+
+For at komme tættere på et fysisk system begrænses relæ-skiftefrekvensen til
+$10Hz$, dette medfører naturligvis at systemet bliver marginalt stabit.
+Amplituden af oscilleringen er dog langt under de $2~mm$.
+
+\paragraph{ Resultater }
+Sliding mode controlleren simuleres og sammenlignes med \emph{PI-lead}
+controlleren, hvor \emph{lead}-leddet er placeret i tilbagekoblingen. Der
+benyttes samme inputs som tidligere.
+
+Controlleren simuleres både omkring arbejdspunktet $h_{10} = 12.6~cm$ i
+\ref{fig:sliding_12_6} og $h_{10} = 100~cm$ i \ref{fig:sliding_100}.
+Ved $h_{10} = 12.6~cm$ er der ikke den store forskel på sliding mode og den
+lineære controller, men ved $h_{10} = 100~cm$ ser man tydeligt at systemes
+ulinearitet ikke har lige så stor inflydelse.
+
+\paragraph{ Ulemper }
+\subparagraph{ Chattering }
+	Skal systemet implementeres fysisk er det et probelm at swiching frekvensen
+	skal holdes meget højere end systemet responstid for at undgå stor amplitude på
+	oscilleringen (chattering)
+\subparagraph{ Begrænset arbejdsområde }
+	Da der i relæfunktionen sættes en øvre grænse for $u$, sættes der også en
+	grænse for den maksimale værdi $h_1$ kan antage.
+
 
 \stdfig{1}{sliding_12_6}{Simulering af det ulineære system med en
 sliding mode controller simuleret omkring arbejdspunktet
@@ -37,3 +68,20 @@ controlleren simuleret omkring arbejdspunktet $h_{10} =
 \stdfig{1}{sliding_sur_100}{Sliding flade for sliding mode
 controlleren simuleret omkring arbejdspunktet $h_{10} =
 100~cm$}{fig:slidin_sur_100}
+
+\paragraph{ Litteratur }
+\emph{
+Arie Levant:
+Universal Single-Input–Single-Output (SISO)
+Sliding-Mode Controllers With Finite-Time
+Convergence
+(2000)}
+
+\emph{
+Yuri Shtessel,
+Christopher Edwards,
+Leonid Fridman,
+Arie Levant:
+Sliding Mode Control
+and Observation
+(2010)}
