@@ -20,7 +20,7 @@ h10 = 12.6;
 % A2*dh2/dt = -a2*sqrt( 2*g*h2 ) + k2*u
 % dh1/dt = 0, dh2/dt = 0
 % h1 = h10, h2 = h20, d = 0, u = u0
-% Løses for h20 og u0.
+% LÃ¸ses for h20 og u0.
 
 u0 = a1*sqrt(2)*sqrt(g*h10)/k2;
 h20 = a1^2*h10/a2^2;
@@ -56,7 +56,7 @@ h2d = tf( h2d(1,:), h2d(2,:) );
 fig_step = 1;
 fig_step = figure(fig_step);
 
-% hvodan sætter man interne begyndelses betingelser / lægger offset til?
+% hvodan sÃ¦tter man interne begyndelses betingelser / lÃ¦gger offset til?
 opt_u = stepDataOptions( 'InputOffset', 0, 'StepAmplitude', 0.1 );
 opt_d = stepDataOptions( 'InputOffset', 0, 'StepAmplitude', 0.1 );
 subplot( 2, 2, 1 ), plot( step( h1u, opt_u ) + h10 );

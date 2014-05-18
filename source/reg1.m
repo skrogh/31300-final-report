@@ -18,7 +18,7 @@ resolution = 0.001;
 
 %Make initial, naive controller:
 %Inital phasemargin aim:
-gamma_m = 50; % fasemargen mål
+gamma_m = 50; % fasemargen mÃ¥l
 alpha = 0.1
 %calc phi_m
 [mag, pha] = bode( tf( [1 1], [alpha 1]),  10.^(-5:resolution:5) );
